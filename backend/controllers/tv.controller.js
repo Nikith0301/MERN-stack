@@ -1,9 +1,5 @@
-import { fetchfromTMDB } from "../services/tmdb.service";
-
-
-
-
-
+// import { fetchfromTMDB } from "../services/tmdb.service";
+import {fetchfromTMDB} from "../services/tmdb.service.js"
 export async function getTrendingTv(req, res) {
 	try {
 		const data = await fetchfromTMDB("https://api.themoviedb.org/3/trending/tv/day?language=en-US");
@@ -11,6 +7,7 @@ export async function getTrendingTv(req, res) {
 
 		res.json({ success: true, content: randomMovie });
 	} catch (error) {
+		console.log(error.message)
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }
@@ -66,6 +63,7 @@ export async function getTvsByCategory(req, res) {
 		const data = await fetchfromTMDB(`https://api.themoviedb.org/3/tv/${category}?language=en-US&page=1`);
 		res.status(200).json({ success: true, content: data.results });
 	} catch (error) {
+		console.log(error)
 		res.status(500).json({ success: false, message: "Internal Server Error" });
 	}
 }

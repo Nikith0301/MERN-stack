@@ -3,14 +3,17 @@ import { User } from "../models/user.model.js"
 import { ENV_VARS } from "../config/envVars.js"
 
 export const protectRoutes=async(req,res,next)=>{
-
-    
+ 
 
     try {
         const token=req.cookies["netflix-token"]
+        // console.log("middleware says token is =",token)
+
         if(!token){
             return  res.status(404).json({success:false,message:"Token not present"})
         }
+        // console.log('ProtectRoutes saya cookieis',token)
+        
         const decoded=jwt.verify(token,ENV_VARS.JWT_SECRET)    
 
         if(!decoded){

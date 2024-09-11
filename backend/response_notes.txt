@@ -1,0 +1,40 @@
+//this is signup response
+{
+  "success": true,
+  "user": {
+    "username": "shiva",
+    "password": "",
+    "email": "kailash@gmail.com",
+    "image": "/avatar1.png",
+    "searchHistory": [],
+    "_id": "66dfdc69a75b5eaa37361da4",
+    "__v": 0
+  }
+}
+
+//this is login response
+{
+  "success": true,
+  "user": {
+    "_id": "66dfdc69a75b5eaa37361da4",
+    "username": "shiva",
+    "password": "",
+    "email": "kailash@gmail.com",
+    "image": "/avatar1.png",
+    "searchHistory": [],
+    "__v": 0
+  }
+}
+
+//this is authCheck response
+{
+  "success": true,
+  "user": {
+    "_id": "66dfdc69a75b5eaa37361da4",
+    "username": "shiva",
+    "email": "kailash@gmail.com",
+    "image": "/avatar1.png",
+    "searchHistory": [],
+    "__v": 0
+  }
+}
