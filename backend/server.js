@@ -11,7 +11,7 @@ import searchRoutes from "./routes/search.routes.js"
 import path from "path";
 const app = express();
 app.use(cors({
-	origin: 'http://localhost:5173', // Your frontend URL
+	
 	credentials: true, // Allow cookies to be sent and received
   }))
 
