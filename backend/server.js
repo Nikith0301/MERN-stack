@@ -27,6 +27,15 @@ app.use(cors({
 //   },
 //   credentials: true
 // }));
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true
+// }));
 
 
 const PORT = ENV_VARS.PORT;
