@@ -17,8 +17,10 @@ export const generateTokenAndSetCookie=(userId,res)=>{
     res.cookie("netflix-token", token, {
         maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in MS
         httpOnly: true, // prevent access via JS
-        sameSite: ENV_VARS.NODE_ENV === "development" ? "lax" : "none", // Cross-origin cookie handling
-        secure: ENV_VARS.NODE_ENV !== "development", // Use secure cookies in production (HTTPS)
+        secure: true, // This ensures it's only sent over HTTPS
+        sameSite: "None", // This ensures cross-origin cookies are sent
+
+        //before it was something else
     });
     
     // console.log("generate token function made this-:",token)
