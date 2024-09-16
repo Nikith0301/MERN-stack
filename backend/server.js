@@ -14,7 +14,7 @@ const app = express();
 // 	origin: 'http://localhost:5173', 
 // 	credentials: true, // Allow cookies to be sent and received
 //   }))
-const allowedOrigins = ['http://localhost:5173', 'https://your-frontend.onrender.com'];
+const allowedOrigins = ['http://localhost:5173'];
 
 app.use(cors({
   origin: (origin, callback) => {
