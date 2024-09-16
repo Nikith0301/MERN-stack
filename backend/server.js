@@ -49,12 +49,14 @@ app.use("/api/v1/search",protectRoutes,searchRoutes)
 
 
 if (ENV_VARS.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "/frontend/dist")));
-
-	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-	});
-}
+	// Comment this block if you're deploying frontend separately
+	// app.use(express.static(path.join(__dirname, "/frontend/dist")));
+  
+	// app.get("*", (req, res) => {
+	//   res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+	// });
+  }
+  
 
 app.listen(5000, () => {
 	console.log("Server garted at http://localhost:" + PORT);
