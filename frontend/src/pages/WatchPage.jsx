@@ -9,6 +9,8 @@ import { ORIGINAL_IMG_BASE_URL, SMALL_IMG_BASE_URL } from "../utils/constant.js"
 import { formatReleaseDate } from "../utils/dateFunction.js";
 import WatchPageSkeleton from "../components/skeletons/WatchPageSkeleton";
 
+const theUrl="https://netflix-backend-34oy.onrender.com"
+
 const WatchPage = () => {
 	const { id } = useParams();
 	const [trailers, setTrailers] = useState([]);
@@ -23,7 +25,7 @@ const WatchPage = () => {
 	useEffect(() => {
 		const getTrailers = async () => {
 			try {
-				const res = await axios.get(`/api/v1/${contentType}/${id}/trailers`);
+				const res = await axios.get(`${theUrl}/api/v1/${contentType}/${id}/trailers`);
 				setTrailers(res.data.trailers);
 			} catch (error) {
 				if (error.message.includes("404")) {
@@ -38,7 +40,7 @@ const WatchPage = () => {
 	useEffect(() => {
 		const getSimilarContent = async () => {
 			try {
-				const res = await axios.get(`/api/v1/${contentType}/${id}/similar`);
+				const res = await axios.get(`${theUrl}/api/v1/${contentType}/${id}/similar`);
 				setSimilarContent(res.data.similar);
 			} catch (error) {
 				if (error.message.includes("404")) {
@@ -53,7 +55,7 @@ const WatchPage = () => {
 	useEffect(() => {
 		const getContentDetails = async () => {
 			try {
-				const res = await axios.get(`/api/v1/${contentType}/${id}/details`);
+				const res = await axios.get(`${theUrl}/api/v1/${contentType}/${id}/details`);
 				setContent(res.data.content);
 			} catch (error) {
 				if (error.message.includes("404")) {

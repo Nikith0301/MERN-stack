@@ -39,7 +39,7 @@ app.use(cors({
 
 
 const PORT = ENV_VARS.PORT;
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 app.use(express.json())
 app.use(cookieParser())
 app.use("/api/v1/auth",authRoutes)

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { SMALL_IMG_BASE_URL } from "../utils/constant.js";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const theUrl="https://netflix-backend-34oy.onrender.com"
+
 const MovieSlider = ({ category }) => {
 	const { contentType } = useContentStore();
 	const [content, setContent] = useState([]);
@@ -18,7 +20,7 @@ const MovieSlider = ({ category }) => {
 
 	useEffect(() => {
 		const getContent = async () => {
-			const res = await axios.get(`/api/v1/${contentType}/${category}`);
+			const res = await axios.get(`${theUrl}/api/v1/${contentType}/${category}`);
 			setContent(res.data.content);
 		};
 
