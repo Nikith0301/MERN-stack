@@ -6,7 +6,7 @@ import { MOVIE_CATEGORIES, ORIGINAL_IMG_BASE_URL, TV_CATEGORIES } from "../../ut
 import { useContentStore } from "../../store/content";
 import MovieSlider from "../../components/MovieSlider";
 import { useState } from "react";
-
+import bhav from "/bhavani-akka(cropped).jpg"
 const HomeScreen = () => {
 	const { trendingContent } = useGetTrendingContent();
 	const { contentType } = useContentStore();
@@ -30,15 +30,15 @@ const HomeScreen = () => {
 					<div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center shimmer -z-10' />
 				)}
 
-				<img
+{/* 				<img
 					src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path}
 					alt='Hero img'
 					className='absolute top-0 left-0 w-full h-full object-cover -z-50'
 					onLoad={() => {
 						setImgLoading(false);
 					}}
-				/>
-
+				/> */}
+<img src={bhav}	className='absolute top-0 left-0 w-full h-full object-cover -z-50'/>
 				<div className='absolute top-0 left-0 w-full h-full bg-black/50 -z-50' aria-hidden='true' />
 
 				<div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center px-8 md:px-16 lg:px-32'>
