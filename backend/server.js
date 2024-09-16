@@ -10,22 +10,23 @@ import tvRoutes from "./routes/tv.routes.js"
 import searchRoutes from "./routes/search.routes.js"
 import path from "path";
 const app = express();
-// app.use(cors({
-// 	origin: 'http://localhost:5173', 
-// 	credentials: true, // Allow cookies to be sent and received
-//   }))
-const allowedOrigins = ['http://localhost:5173', 'https://your-frontend.onrender.com'];
-
 app.use(cors({
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
-}));
+	// origin: 'http://localhost:5173', 
+	origin:'https://netflix-aus-fontend.onrender.com',
+	credentials: true, // Allow cookies to be sent and received
+  }))
+// const allowedOrigins = ['http://localhost:5173']
+
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true
+// }));
 
 
 const PORT = ENV_VARS.PORT;
