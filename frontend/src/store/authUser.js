@@ -53,6 +53,9 @@ import { create } from "zustand";
 // 	},
 // }));
 
+const theUrl="https://netflix-backend-34oy.onrender.com"
+// const theUrl="http://localhost:5000"
+
 export const useAuthStore=create((set)=>({
 
     user: null,
@@ -66,7 +69,8 @@ export const useAuthStore=create((set)=>({
     console.log(credentials)
 try {
     console.log(credentials)
-    const response=await  axios.post("http://localhost:5000/api/v1/auth/signup",credentials)
+    const response=await  axios.post(`${theUrl}/api/v1/auth/signup`,credentials)
+
     set({user:response.data.user,isSigningUp:false});
     toast.success("Account created successfully");
 } catch (error) {
@@ -82,7 +86,8 @@ try {
 
     try {
         console.log(credentials)
-        const response=await  axios.post("http://localhost:5000/api/v1/auth/login",credentials)
+        const response=await  axios.post(`${theUrl}/api/v1/auth/login`,credentials)
+
         console.log(response.data.user.tok)
         const token=response.data.user.tok;
         document.cookie = `netflix-token=${token}; path=/; max-age=${15 * 24 * 60 * 60}; SameSite=Lax`;
@@ -103,7 +108,7 @@ try {
         // Clear cookie by setting it with an expired date
 document.cookie = "netflix-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 console.log("After",document.cookie);
-       axios.post('http://localhost:5000/api/v1/auth/logout',{withCredentials: true});
+       axios.post(`${theUrl}/api/v1/auth/logout`,{withCredentials: true});
 
         set({user:null,isLoggingOut:false})
         toast.success("Logged out successfully");
@@ -122,7 +127,7 @@ console.log("After",document.cookie);
    authCheck: async () => {
     set({ isCheckingAuth: true });
     try {
-        const response = await axios.get('http://localhost:5000/api/v1/auth/authCheck',
+        const response = await axios.get(`${theUrl}/api/v1/auth/authCheck`,
             {
                 // Ensure withCredentials is true to send cookies with the request
                 withCredentials: true
