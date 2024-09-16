@@ -14,8 +14,6 @@ const useGetTrendingContent = () => {
         const getTrendingContent=async()=>{
 
           try {
-
-
             const res = await axios.get(`${theUrl}/api/v1/${contentType}/trending`,
               {
                   // Ensure withCredentials is true to send cookies with the request
