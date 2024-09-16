@@ -4,6 +4,8 @@ import {useContentStore} from "../store/content.js"
 import axios from "axios";
 
 
+const theUrl="https://netflix-backend-34oy.onrender.com"
+// const theUrl="http://localhost:5000"
 
 const useGetTrendingContent = () => {
     const [trendingContent,setTrendingContent]=useState();
@@ -14,7 +16,7 @@ const useGetTrendingContent = () => {
           try {
 
 
-            const res = await axios.get(`http://localhost:5000/api/v1/${contentType}/trending`,
+            const res = await axios.get(`${theUrl}/api/v1/${contentType}/trending`,
               {
                   // Ensure withCredentials is true to send cookies with the request
                   withCredentials: true
