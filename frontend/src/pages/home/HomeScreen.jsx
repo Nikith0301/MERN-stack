@@ -62,7 +62,7 @@ const HomeScreen = () => {
 {/* 							{trendingContent?.overview.length > 200
 								? trendingContent?.overview.slice(0, 200) + "..."
 								: trendingContent?.overview} */}
-								This series follows the personal stories of immigrants who left behind their homelands in search of a new life in Australia. From India to Europe and beyond, each episode dives into the experiences of individuals from diverse cultural backgrounds as they navigate the challenges of starting over in a foreign country.
+								This series follows the personal stories of immigrants who left behind their homelands in search of a new life in Australia. From India to Europe and ...
 						</p>
 					</div>
 
