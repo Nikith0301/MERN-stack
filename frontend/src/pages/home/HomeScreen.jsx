@@ -26,9 +26,9 @@ const HomeScreen = () => {
 				<Navbar />
 
 				{/* COOL OPTIMIZATION HACK FOR IMAGES */}
-				{imgLoading && (
+{/* 				{imgLoading && (
 					<div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center shimmer -z-10' />
-				)}
+				)} */}
 
 {/* 				<img
 					src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path}
