@@ -49,7 +49,8 @@ const HomeScreen = () => {
 
 					<div className='max-w-2xl'>
 						<h1 className='mt-4 text-6xl font-extrabold text-balance'>
-							{trendingContent?.title || trendingContent?.name}
+{/* 							{trendingContent?.title || trendingContent?.name} */}
+							my best shorts
 						</h1>
 						<p className='mt-2 text-lg'>
 							{trendingContent?.release_date?.split("-")[0] ||
@@ -58,9 +59,10 @@ const HomeScreen = () => {
 						</p>
 
 						<p className='mt-4 text-lg'>
-							{trendingContent?.overview.length > 200
+{/* 							{trendingContent?.overview.length > 200
 								? trendingContent?.overview.slice(0, 200) + "..."
-								: trendingContent?.overview}
+								: trendingContent?.overview} */}
+								This series follows the personal stories of immigrants who left behind their homelands in search of a new life in Australia. From India to Europe and beyond, each episode dives into the experiences of individuals from diverse cultural backgrounds as they navigate the challenges of starting over in a foreign country.
 						</p>
 					</div>
 
