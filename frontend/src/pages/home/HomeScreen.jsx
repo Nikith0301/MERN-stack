@@ -63,7 +63,7 @@ const HomeScreen = () => {
 								? trendingContent?.overview.slice(0, 200) + "..."
 								: trendingContent?.overview}
 								
-
+						</p>
 					<div className='flex mt-8'>
 						<Link
 							to={`/watch/${trendingContent?.id}`}
